@@ -28,7 +28,89 @@
 </head>
 <body class="page__body">
     <header class="page__header header">
+      <button class="header__toggle" type="button">
+        <span class="visually-hidden">Открыть меню</span>
+      </button>
+      <picture>
+        <source type="image/svg+xml" media="(prefers-color-scheme: dark)"
+          srcset="./images/logo-dark.svg"
+          width="60" height="50">
 
+        <img class="header__logo"
+          src="./images/logo-light.svg"
+          width="82" height="31"
+          alt="Лепёхин">
+      </picture>
+      <form class="header__search-form" action="#" role="search">
+        <label class="visually-hidden" for="search">Поиск по сайту</label>
+        <input class="header__search-input" id="search" name="search" type="search">
+        <button class="visually-hidden" type="submit">Найти</button>
+      </form>
+      <nav class="header__menu menu">
+
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__link menu__link--main" href="#">Главная</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link menu__link--inbox" href="#">Входящие</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link menu__link--tasks" href="#">Задачи</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link menu__link--activity" href="#">Активность</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link menu__link--team" href="#">Команда</a>
+          </li>
+        </ul>
+
+        <a class="menu__link menu__link--projects" href="#">Проекты</a>
+
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__link menu__link--project" href="#" data-bookmark-color="#A855F7">Дизайн</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link menu__link--project" href="#" data-bookmark-color="#84CC16">Веб</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link menu__link--project" href="#" data-bookmark-color="#EC4899">Редактура</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="header__button button" type="button">Создать проект</button>
+      <nav class="header__user-menu user-menu">
+        <p class="user-menu__user-name">Михаил Воробьев</p>
+        <p class="user-menu__user-job-title">Разработчик</p>
+
+        <picture>
+          <source type="image/webp"
+            srcset="images/avatar@1x.webp 1x,
+                    images/avatar@2x.webp 2x"
+            width="40" height="40">
+          <img class="user-menu__avatar"
+            src="images/avatar@1x.jpg"
+            srcset="images/avatar@2x.jpg 2x"
+            width="40" height="40"
+            alt="">
+        </picture>
+
+        <button class="user-menu__status-menu" type="button">
+          <span class="visually-hidden">Изменить статус</span>
+        </button>
+        <ul class="user-menu__status-list">
+          <!-- Меню выбора статуса -->
+        </ul>
+
+        <button class="user-menu__toggle" type="button">
+          <span class="visually-hidden">Открыть контекстное меню</span>
+        </button>
+        <ul class="user-menu__list">
+          <!-- Контекстное меню -->
+        </ul>
+      </nav>
     </header>
 
     <main class="page__main main">
