@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head class="page">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лепёхин</title>
+
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f5ff">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#594d80">
+
+    <script>
+        if (matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+            document.documentElement.style.display = 'none';
+            document.head.insertAdjacentHTML(
+                'beforeend',
+                '<link rel="stylesheet" href="styles/light-scheme.css" onload="document.documentElement.style.display=\'\'">'
+            );
+        }
+      </script>
+
+
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/light-scheme.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="./styles/dark-scheme.css" media="(prefers-color-scheme: dark)">
+
+    <link rel="preload" href="fonts/Inter-Medium.ttf" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+<body class="page__body">
+    <header class="page__header header">
+
+    </header>
+
+    <main class="page__main main">
+
+    </main>
+
+    <footer class="page__footer footer">
+
+    </footer>
+
+    <script src="./scripts/main.js" type="modules"></script>
+</body>
+</html>

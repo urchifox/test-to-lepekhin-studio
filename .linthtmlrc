@@ -1,0 +1,11 @@
+{
+  "extends": "linthtml-config-htmlacademy",
+  "rules": {
+    "htmlacademy/req-single-styles": [
+      false
+    ],
+    "htmlacademy/no-blocking-script": [
+      false
+    ]
+  }
+}
