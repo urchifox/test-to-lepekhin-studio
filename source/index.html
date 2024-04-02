@@ -1,126 +1,119 @@
 <!DOCTYPE html>
 <html class="page" lang="ru">
-<head >
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лепёхин</title>
 
-    <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f5ff">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#594d80">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лепёхин</title>
 
-    <script>
-        if (matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
-            document.documentElement.style.display = 'none';
-            document.head.insertAdjacentHTML(
-                'beforeend',
-                '<link rel="stylesheet" href="styles/light-scheme.css" onload="document.documentElement.style.display=\'\'">'
-            );
-        }
-      </script>
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f5ff">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#594d80">
 
+  <script>
+    if (matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+      document.documentElement.style.display = 'none';
+      document.head.insertAdjacentHTML(
+        'beforeend',
+        '<link rel="stylesheet" href="styles/light-scheme.css" onload="document.documentElement.style.display=\'\'">'
+      );
+    }
+  </script>
 
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/light-scheme.css" media="(prefers-color-scheme: light)">
-    <link rel="stylesheet" href="./styles/dark-scheme.css" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/light-scheme.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="./styles/dark-scheme.css" media="(prefers-color-scheme: dark)">
 
-    <link rel="preload" href="fonts/Inter-Medium.ttf" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Inter-Medium.ttf" as="font" type="font/woff2" crossorigin="anonymous">
 </head>
+
 <body class="page__body">
-    <header class="page__header header">
-      <button class="header__toggle" type="button">
-        <span class="visually-hidden">Открыть меню</span>
-      </button>
+  <header class="page__header header">
+    <button class="header__toggle" type="button">
+      <span class="visually-hidden">Открыть меню</span>
+    </button>
+    <picture>
+      <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="./images/logo-dark.svg" width="60"
+        height="50">
+
+      <img class="header__logo" src="./images/logo-light.svg" width="82" height="31" alt="Лепёхин">
+    </picture>
+    <form class="header__search-form" action="#" role="search">
+      <label class="visually-hidden" for="search">Поиск по сайту</label>
+      <input class="header__search-input" id="search" name="search" type="search">
+      <button class="visually-hidden" type="submit">Найти</button>
+    </form>
+    <nav class="header__menu menu">
+
+      <ul class="menu__list">
+        <li class="menu__item">
+          <a class="menu__link menu__link--main" href="#">Главная</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link menu__link--inbox" href="#">Входящие</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link menu__link--tasks" href="#">Задачи</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link menu__link--activity" href="#">Активность</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link menu__link--team" href="#">Команда</a>
+        </li>
+      </ul>
+
+      <a class="menu__link menu__link--projects" href="#">Проекты</a>
+
+      <ul class="menu__list">
+        <li class="menu__item">
+          <a class="menu__link menu__link--project" href="#" data-bookmark-color="#A855F7">Дизайн</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link menu__link--project" href="#" data-bookmark-color="#84CC16">Веб</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link menu__link--project" href="#" data-bookmark-color="#EC4899">Редактура</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="header__button button" type="button">Создать проект</button>
+    <nav class="header__user-menu user-menu">
+      <p class="user-menu__user-name">Михаил Воробьев</p>
+      <p class="user-menu__user-job-title">Разработчик</p>
+
       <picture>
-        <source type="image/svg+xml" media="(prefers-color-scheme: dark)"
-          srcset="./images/logo-dark.svg"
-          width="60" height="50">
-
-        <img class="header__logo"
-          src="./images/logo-light.svg"
-          width="82" height="31"
-          alt="Лепёхин">
+        <source type="image/webp" srcset="images/avatar@1x.webp 1x,
+                    images/avatar@2x.webp 2x" width="40" height="40">
+        <img class="user-menu__avatar" src="images/avatar@1x.jpg" srcset="images/avatar@2x.jpg 2x" width="40"
+          height="40" alt="">
       </picture>
-      <form class="header__search-form" action="#" role="search">
-        <label class="visually-hidden" for="search">Поиск по сайту</label>
-        <input class="header__search-input" id="search" name="search" type="search">
-        <button class="visually-hidden" type="submit">Найти</button>
-      </form>
-      <nav class="header__menu menu">
 
-        <ul class="menu__list">
-          <li class="menu__item">
-            <a class="menu__link menu__link--main" href="#">Главная</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link menu__link--inbox" href="#">Входящие</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link menu__link--tasks" href="#">Задачи</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link menu__link--activity" href="#">Активность</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link menu__link--team" href="#">Команда</a>
-          </li>
-        </ul>
+      <button class="user-menu__status-menu" type="button">
+        <span class="visually-hidden">Изменить статус</span>
+      </button>
+      <ul class="user-menu__status-list">
+        <!-- Меню выбора статуса -->
+      </ul>
 
-        <a class="menu__link menu__link--projects" href="#">Проекты</a>
+      <button class="user-menu__toggle" type="button">
+        <span class="visually-hidden">Открыть контекстное меню</span>
+      </button>
+      <ul class="user-menu__list">
+        <!-- Контекстное меню -->
+      </ul>
+    </nav>
+  </header>
 
-        <ul class="menu__list">
-          <li class="menu__item">
-            <a class="menu__link menu__link--project" href="#" data-bookmark-color="#A855F7">Дизайн</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link menu__link--project" href="#" data-bookmark-color="#84CC16">Веб</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link menu__link--project" href="#" data-bookmark-color="#EC4899">Редактура</a>
-          </li>
-        </ul>
-      </nav>
-      <button class="header__button button" type="button">Создать проект</button>
-      <nav class="header__user-menu user-menu">
-        <p class="user-menu__user-name">Михаил Воробьев</p>
-        <p class="user-menu__user-job-title">Разработчик</p>
+  <main class="page__main main">
 
-        <picture>
-          <source type="image/webp"
-            srcset="images/avatar@1x.webp 1x,
-                    images/avatar@2x.webp 2x"
-            width="40" height="40">
-          <img class="user-menu__avatar"
-            src="images/avatar@1x.jpg"
-            srcset="images/avatar@2x.jpg 2x"
-            width="40" height="40"
-            alt="">
-        </picture>
+  </main>
 
-        <button class="user-menu__status-menu" type="button">
-          <span class="visually-hidden">Изменить статус</span>
-        </button>
-        <ul class="user-menu__status-list">
-          <!-- Меню выбора статуса -->
-        </ul>
+  <footer class="page__footer footer">
 
-        <button class="user-menu__toggle" type="button">
-          <span class="visually-hidden">Открыть контекстное меню</span>
-        </button>
-        <ul class="user-menu__list">
-          <!-- Контекстное меню -->
-        </ul>
-      </nav>
-    </header>
+  </footer>
 
-    <main class="page__main main">
-
-    </main>
-
-    <footer class="page__footer footer">
-
-    </footer>
-
-    <script src="./scripts/main.js" type="module"></script>
+  <script src="./scripts/main.js" type="module"></script>
 </body>
+
 </html>
