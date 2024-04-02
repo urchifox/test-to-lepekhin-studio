@@ -32,22 +32,31 @@
     <button class="header__toggle" type="button">
       <span class="visually-hidden">Открыть меню</span>
     </button>
+    <!-- Логотип может быть дополнительно обернут в ссылку, ведущую на главную, если этого требует тз -->
     <picture>
-      <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="./images/logo-dark.svg" width="60"
-        height="50">
-
-      <img class="header__logo" src="./images/logo-light.svg" width="82" height="31" alt="Лепёхин">
+      <source
+        type="image/svg+xml"
+        media="(prefers-color-scheme: dark)"
+        srcset="./images/logo-dark.svg"
+        width="60" height="50"
+      >
+      <img class="header__logo"
+        src="./images/logo-light.svg"
+        width="82" height="31"
+        alt="Лепёхин"
+      >
     </picture>
+
     <form class="header__search-form" action="#" role="search">
       <label class="visually-hidden" for="search">Поиск по сайту</label>
       <input class="header__search-input" id="search" name="search" type="search">
       <button class="visually-hidden" type="submit">Найти</button>
     </form>
-    <nav class="header__menu menu">
 
+    <nav class="header__menu menu" aria-label="Разделы портала">
       <ul class="menu__list">
         <li class="menu__item">
-          <a class="menu__link menu__link--main" href="#">Главная</a>
+          <a class="menu__link menu__link--main" href="№" aria-current="page">Главная</a>
         </li>
         <li class="menu__item">
           <a class="menu__link menu__link--inbox" href="#">Входящие</a>
@@ -61,59 +70,96 @@
         <li class="menu__item">
           <a class="menu__link menu__link--team" href="#">Команда</a>
         </li>
-      </ul>
-
-      <a class="menu__link menu__link--projects" href="#">Проекты</a>
-
-      <ul class="menu__list">
-        <li class="menu__item">
-          <a class="menu__link menu__link--project" href="#" data-bookmark-color="#A855F7">Дизайн</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link menu__link--project" href="#" data-bookmark-color="#84CC16">Веб</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link menu__link--project" href="#" data-bookmark-color="#EC4899">Редактура</a>
+        <li class="menu__item menu__item--subunit">
+          <a class="menu__link menu__link--projects" href="#">Проекты</a>
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a class="menu__link menu__link--project" href="#" data-bookmark-color="#A855F7">Дизайн</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link menu__link--project" href="#" data-bookmark-color="#84CC16">Веб</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link menu__link--project" href="#" data-bookmark-color="#EC4899">Редактура</a>
+            </li>
+          </ul>
         </li>
       </ul>
     </nav>
+
+    <!-- Если элемент "создать проект" должен открывать страницу создания проекта, то это будет ссылка <a> в составе навигации -->
     <button class="header__button button" type="button">Создать проект</button>
-    <nav class="header__user-menu user-menu">
-      <p class="user-menu__user-name">Михаил Воробьев</p>
-      <p class="user-menu__user-job-title">Разработчик</p>
 
-      <picture>
-        <source type="image/webp" srcset="images/avatar@1x.webp 1x,
-                    images/avatar@2x.webp 2x" width="40" height="40">
-        <img class="user-menu__avatar" src="images/avatar@1x.jpg" srcset="images/avatar@2x.jpg 2x" width="40"
-          height="40" alt="">
-      </picture>
-
-      <button class="user-menu__status-menu" type="button">
+    <div class="header__user-info user-info">
+      <p class="user-info__name">Михаил Воробьев</p>
+      <p class="user-info__job-title">Разработчик</p>
+      <button class="user-info__status-menu"
+        type="button"
+        aria-expanded="false"
+        aria-controls="status-menu"
+      >
         <span class="visually-hidden">Изменить статус</span>
       </button>
-      <ul class="user-menu__status-list">
-        <!-- Меню выбора статуса -->
-      </ul>
+      <!-- Гипотетический вариант содержания меню -->
+      <form class="user-info__status-menu status-menu" id="status-menu" action="#">
+        <label class="status-menu__label">
+          <input class="status-menu__radio"
+            type="radio"
+            name="status"
+            value="online"
+            checked
+          >
+          В сети
+        </label>
+        <label class="status-menu__label">
+          <input class="status-menu__radio"
+            type="radio"
+            name="status"
+            value="dont-disturb"
+          >
+          Не беспокоить
+        </label>
+      </form>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="images/avatar@1x.webp 1x, images/avatar@2x.webp 2x"
+          width="40" height="40"
+        >
+        <img class="user-info__avatar"
+          src="images/avatar@1x.jpg"
+          srcset="images/avatar@2x.jpg 2x"
+          width="40" height="40" alt=""
+        >
+      </picture>
 
-      <button class="user-menu__toggle" type="button">
+      <button class="user-info__toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="user-menu"
+      >
         <span class="visually-hidden">Открыть контекстное меню</span>
       </button>
-      <ul class="user-menu__list">
-        <!-- Контекстное меню -->
-      </ul>
-    </nav>
+      <!-- Гипотетический вариант содержания меню -->
+      <nav class="user-info__menu" id="user-menu" aria-label="Меню пользователя">
+        <ul class="user-info__menu-list">
+          <li class="user-info__user-list">
+            <a class="user-info__user-link" href="#">Настройки</a>
+          </li>
+          <li class="user-info__user-list">
+            <a class="user-info__user-link" href="#">Выйти</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main class="page__main main">
-
   </main>
 
   <footer class="page__footer footer">
-
   </footer>
 
   <script src="./scripts/main.js" type="module"></script>
 </body>
-
 </html>
