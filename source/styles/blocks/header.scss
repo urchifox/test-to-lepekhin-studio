@@ -1,0 +1,14 @@
+.header {
+  background-color: var(--color-background-basic);
+  overflow: auto;
+  outline: auto;
+  container-type: inline-size;
+
+  &--closed {
+    width: var(--sidebar-width-closed);
+  }
+
+  &--opened {
+    width: var(--sidebar-width-opened);
+  }
+}
