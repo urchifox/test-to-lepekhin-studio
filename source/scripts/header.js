@@ -1,5 +1,5 @@
 const header = document.querySelector('.header');
-const button = header.querySelector('.header__toggle');
+const button = header.querySelector('.header__toggler');
 
 const onButtonClick = () => {
   header.classList.toggle('header--closed');
