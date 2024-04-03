@@ -8,7 +8,10 @@
 @import "./global/helpers.scss";
 
 /* REUSABLE BLOCKS */
-
+@import "./blocks/menu.scss";
+@import "./blocks/search-form.scss";
+@import "./blocks/button.scss";
+@import "./blocks/user-info.scss";
 
 /* MAIN BLOCKS */
 @import "./blocks/page.scss";

@@ -19,11 +19,13 @@
       <!-- Логотип может быть дополнительно обернут в ссылку, ведущую на главную, если этого требует тз -->
       <picture>
         <source
+          type="image/svg+xml"
           media="(prefers-color-scheme: dark)"
           srcset="./images/logo-dark-mode.svg"
           width="82" height="31"
         >
         <source
+          type="image/svg+xml"
           media="(prefers-color-scheme: light)"
           srcset="./images/logo-light-mode.svg"
           width="82" height="31"
@@ -36,48 +38,76 @@
       </picture>
     </div>
 
-    <form class="header__search-form" action="#" role="search">
+    <form class="header__search-form search-form" action="#" role="search">
       <label class="visually-hidden" for="search">Поиск по сайту</label>
-      <input class="header__search-input" id="search" name="search" type="search">
-      <button class="visually-hidden" type="submit">Найти</button>
+      <input class="search-form__input"
+        id="search"
+        name="search"
+        type="search"
+        placeholder="Search"
+      >
+      <button class="visually-hidden" type="submit" tabindex="-1">Найти</button>
     </form>
 
     <nav class="header__menu menu" aria-label="Разделы портала">
+      <div class="menu__scroll-icon menu__scroll-icon--position-top" aria-hidden="true"></div>
       <ul class="menu__list">
         <li class="menu__item">
-          <a class="menu__link menu__link--main" href="№" aria-current="page">Главная</a>
+          <a class="menu__link menu__link--icon-home" href="№" aria-current="page">
+            <span class="menu__link-text">Главная</span>
+          </a>
         </li>
         <li class="menu__item">
-          <a class="menu__link menu__link--inbox" href="#">Входящие</a>
+          <a class="menu__link menu__link--icon-inbox" href="#">
+            <span class="menu__link-text">Входящие</span>
+          </a>
         </li>
         <li class="menu__item">
-          <a class="menu__link menu__link--tasks" href="#">Задачи</a>
+          <a class="menu__link menu__link--icon-tasks" href="#">
+            <span class="menu__link-text">Задачи</span>
+          </a>
         </li>
         <li class="menu__item">
-          <a class="menu__link menu__link--activity" href="#">Активность</a>
+          <a class="menu__link menu__link--icon-activity" href="#">
+            <span class="menu__link-text">Активность</span>
+          </a>
         </li>
         <li class="menu__item">
-          <a class="menu__link menu__link--team" href="#">Команда</a>
+          <a class="menu__link menu__link--icon-team" href="#">
+            <span class="menu__link-text">Команда</span>
+          </a>
         </li>
-        <li class="menu__item menu__item--subunit">
-          <a class="menu__link menu__link--projects" href="#">Проекты</a>
-          <ul class="menu__list">
-            <li class="menu__item">
-              <a class="menu__link menu__link--project" href="#" data-bookmark-color="#A855F7">Дизайн</a>
+        <li class="menu__divider" aria-hidden="true"></li>
+        <li class="menu__item">
+          <a class="menu__link menu__link--icon-projects menu__link--type-subtitle" href="#">
+            <span class="menu__link-text">Проекты</span>
+          </a>
+          <ul class="menu__list menu__list--type-sublist">
+            <li class="menu__item menu__item--subitem">
+              <a class="menu__link menu__link--type-project" href="#" data-bookmark-color="#A855F7">
+                <span class="menu__link-text">Дизайн</span>
+              </a>
             </li>
-            <li class="menu__item">
-              <a class="menu__link menu__link--project" href="#" data-bookmark-color="#84CC16">Веб</a>
+            <li class="menu__item menu__item--subitem">
+              <a class="menu__link menu__link--type-project" href="#" data-bookmark-color="#84CC16">
+                <span class="menu__link-text">Веб</span>
+              </a>
             </li>
-            <li class="menu__item">
-              <a class="menu__link menu__link--project" href="#" data-bookmark-color="#EC4899">Редактура</a>
+            <li class="menu__item menu__item--subitem">
+              <a class="menu__link menu__link--type-project" href="#" data-bookmark-color="#EC4899">
+                <span class="menu__link-text">Редактура</span>
+              </a>
             </li>
           </ul>
         </li>
       </ul>
+      <div class="menu__scroll-icon menu__scroll-icon--position-bottom" aria-hidden="true"></div>
     </nav>
 
     <!-- Если элемент "создать проект" должен открывать страницу создания проекта, то это будет ссылка <a> в составе навигации -->
-    <button class="header__button button" type="button">Создать проект</button>
+    <button class="header__button button button--icon-add button--type-primary" type="button">
+      <span class="button__text">Создать проект</span>
+    </button>
 
     <div class="header__user-info user-info">
       <p class="user-info__name">Михаил Воробьев</p>
@@ -144,17 +174,6 @@
   </header>
 
   <main class="page__main main">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea deleniti obcaecati quidem fuga dolores? Deleniti, libero nostrum nulla sed saepe omnis sint ex ratione quas eligendi optio voluptas, similique amet.</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea deleniti obcaecati quidem fuga dolores? Deleniti, libero nostrum nulla sed saepe omnis sint ex ratione quas eligendi optio voluptas, similique amet.</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea deleniti obcaecati quidem fuga dolores? Deleniti, libero nostrum nulla sed saepe omnis sint ex ratione quas eligendi optio voluptas, similique amet.</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea deleniti obcaecati quidem fuga dolores? Deleniti, libero nostrum nulla sed saepe omnis sint ex ratione quas eligendi optio voluptas, similique amet.</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea deleniti obcaecati quidem fuga dolores? Deleniti, libero nostrum nulla sed saepe omnis sint ex ratione quas eligendi optio voluptas, similique amet.</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea deleniti obcaecati quidem fuga dolores? Deleniti, libero nostrum nulla sed saepe omnis sint ex ratione quas eligendi optio voluptas, similique amet.</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea deleniti obcaecati quidem fuga dolores? Deleniti, libero nostrum nulla sed saepe omnis sint ex ratione quas eligendi optio voluptas, similique amet.</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea deleniti obcaecati quidem fuga dolores? Deleniti, libero nostrum nulla sed saepe omnis sint ex ratione quas eligendi optio voluptas, similique amet.</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea deleniti obcaecati quidem fuga dolores? Deleniti, libero nostrum nulla sed saepe omnis sint ex ratione quas eligendi optio voluptas, similique amet.</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea deleniti obcaecati quidem fuga dolores? Deleniti, libero nostrum nulla sed saepe omnis sint ex ratione quas eligendi optio voluptas, similique amet.</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea deleniti obcaecati quidem fuga dolores? Deleniti, libero nostrum nulla sed saepe omnis sint ex ratione quas eligendi optio voluptas, similique amet.</p>
   </main>
 
   <footer class="page__footer footer">
