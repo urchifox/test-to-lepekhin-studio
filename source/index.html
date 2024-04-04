@@ -112,45 +112,48 @@
     <div class="header__user-info user-info">
       <p class="user-info__name">Михаил Воробьев</p>
       <p class="user-info__job-title">Разработчик</p>
-      <button class="user-info__status-menu"
-        type="button"
-        aria-expanded="false"
-        aria-controls="status-menu"
-      >
-        <span class="visually-hidden">Изменить статус</span>
-      </button>
-      <!-- Гипотетический вариант содержания меню -->
-      <form class="user-info__status-menu status-menu" id="status-menu" action="#">
-        <label class="status-menu__label">
-          <input class="status-menu__radio"
-            type="radio"
-            name="status"
-            value="online"
-            checked
-          >
-          В сети
-        </label>
-        <label class="status-menu__label">
-          <input class="status-menu__radio"
-            type="radio"
-            name="status"
-            value="dont-disturb"
-          >
-          Не беспокоить
-        </label>
-      </form>
-      <picture>
-        <source
-          type="image/webp"
-          srcset="images/avatar@1x.webp 1x, images/avatar@2x.webp 2x"
-          width="40" height="40"
+
+      <div class="user-info__avatar-wrapper">
+        <button class="user-info__status-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="status-menu"
         >
-        <img class="user-info__avatar"
-          src="images/avatar@1x.jpg"
-          srcset="images/avatar@2x.jpg 2x"
-          width="40" height="40" alt=""
-        >
-      </picture>
+          <span class="visually-hidden">Изменить статус</span>
+        </button>
+        <!-- Гипотетический вариант содержания меню -->
+        <!-- <form class="user-info__status-menu status-menu" id="status-menu" action="#">
+          <label class="status-menu__label">
+            <input class="status-menu__radio"
+              type="radio"
+              name="status"
+              value="online"
+              checked
+            >
+            В сети
+          </label>
+          <label class="status-menu__label">
+            <input class="status-menu__radio"
+              type="radio"
+              name="status"
+              value="dont-disturb"
+            >
+            Не беспокоить
+          </label>
+        </form> -->
+        <picture>
+          <source
+            type="image/webp"
+            srcset="images/avatar@1x.webp 1x, images/avatar@2x.webp 2x"
+            width="40" height="40"
+          >
+          <img class="user-info__avatar"
+            src="images/avatar@1x.jpg"
+            srcset="images/avatar@2x.jpg 2x"
+            width="40" height="40" alt=""
+          >
+        </picture>
+      </div>
 
       <button class="user-info__toggle"
         type="button"
@@ -160,7 +163,7 @@
         <span class="visually-hidden">Открыть контекстное меню</span>
       </button>
       <!-- Гипотетический вариант содержания меню -->
-      <nav class="user-info__menu" id="user-menu" aria-label="Меню пользователя">
+      <!-- <nav class="user-info__menu" id="user-menu" aria-label="Меню пользователя">
         <ul class="user-info__menu-list">
           <li class="user-info__user-list">
             <a class="user-info__user-link" href="#">Настройки</a>
@@ -169,7 +172,7 @@
             <a class="user-info__user-link" href="#">Выйти</a>
           </li>
         </ul>
-      </nav>
+      </nav> -->
     </div>
   </header>
 
