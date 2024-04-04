@@ -1,11 +1,8 @@
 .menu {
   position: relative;
-  overflow: hidden;
   scrollbar-width: none;
 
-  &:hover {
-    overflow: auto;
-  }
+  overflow: auto;
 }
 
 .menu__scroll-icon {
@@ -13,8 +10,6 @@
   z-index: 1;
   left: 0;
   right: 0;
-
-  opacity: 0;
 
   @media (prefers-color-scheme: light) {
     color: rgba(255, 255, 255, 0.7);
@@ -78,6 +73,7 @@
 
   padding-left: 0;
 
+  display: flex;
   flex-direction: column;
   gap: 8px;
 
@@ -95,13 +91,18 @@
 }
 
 .menu__link {
+  position: relative;
+
   padding-top: 8px;
   padding-bottom: 8px;
   padding-right: 8px;
+  border-radius: 4px;
 
   display: flex;
   gap: 8px;
   align-items: center;
+
+  cursor: pointer;
 
   @container (width = 7rem) {
     padding-left: 8px;
@@ -109,6 +110,31 @@
 
   @container (width > 7rem) {
     padding-left: 16px;
+  }
+
+
+  &:hover {
+    color: rgba(139, 92, 246, 1);
+  }
+
+  &:active {
+    color: lighten(rgba(139, 92, 246, 1), 15);
+  }
+
+  &:focus-visible {
+    outline-offset: -2px;
+  }
+
+  &--is-current {
+    @media (prefers-color-scheme: light) {
+      color: rgba(124, 58, 237, 1);
+      background-color: rgba(237, 233, 254, 1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: rgba(255, 255, 255, 1);
+      background-color: rgba(63, 63, 70, 1);
+    }
   }
 
   &--icon-home {
@@ -172,9 +198,20 @@
       background-color: rgba(113, 113, 122, 1);
     }
   }
+
+  &:hover:not(.menu__link--type-project)::before,
+  &:active:not(.menu__link--type-project)::before {
+    background-color: currentColor;
+  }
+
+  &--is-current:not(.menu__link--type-project)::before {
+    background-color: currentColor;
+  }
 }
 
 .menu__link-text {
+  line-height: 20px;
+
   @container (width = 7rem) {
     display: none;
   }
@@ -184,9 +221,50 @@
   }
 }
 
+.menu__counter {
+  border-radius: 50%;
+
+  background-color: rgba(139, 92, 246, 1);
+
+  @container (width = 7rem) {
+    position: absolute;
+    top: 6px;
+    right: 1px;
+
+    width: 8px;
+    height: 8px;
+  }
+
+  @container (width > 7rem) {
+    margin-left: auto;
+    margin-right: 8px;
+
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.menu__count-number {
+  @container (width = 7rem) {
+    font-size: 0;
+  }
+
+  @container (width > 7rem) {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 14px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
 .menu__divider {
-  margin-top: 32px;
-  margin-bottom: 32px;
+  margin-top: 23px;
+  margin-bottom: 23px;
 
   width: 100%;
   height: 2px;

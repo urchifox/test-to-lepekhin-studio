@@ -5,25 +5,25 @@ const iconBottom = menu.querySelector('.menu__scroll-icon--position-bottom');
 
 const isOverflowedVertically = () => menu.scrollHeight > menu.clientHeight;
 
-const setIconOpacity = (icon) => {
-  icon.style.opacity = Number(isOverflowedVertically());
+const setIconDisplay = (icon) => {
+  icon.style.display = isOverflowedVertically() ? 'block' : 'none';
 };
 
 const onWidthToglerClick = () => {
-  setIconOpacity(iconBottom);
+  setIconDisplay(iconBottom);
 };
 
 const onDocumentResize = () => {
-  setIconOpacity(iconBottom);
+  setIconDisplay(iconBottom);
 };
 
 const onMenuScroll = () => {
-  iconTop.style.opacity = Number(menu.scrollTop > 0);
-  iconBottom.style.opacity = Number(menu.scrollHeight - menu.clientHeight > menu.scrollTop);
+  iconTop.style.display = menu.scrollTop > 0 ? 'block' : 'none';
+  iconBottom.style.display = menu.scrollHeight - menu.clientHeight > menu.scrollTop ? 'block' : 'none';
 };
 
 const init = () => {
-  setIconOpacity(iconBottom);
+  setIconDisplay(iconBottom);
   window.addEventListener('resize', onDocumentResize);
   menu.addEventListener('scroll', onMenuScroll);
   widthToggler.addEventListener('click', onWidthToglerClick);

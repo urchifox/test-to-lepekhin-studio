@@ -4,6 +4,7 @@
   &::before {
     content: "";
     position: absolute;
+    z-index: -1;
     top: 8px;
     bottom: 8px;
 
@@ -49,6 +50,8 @@
   display: flex;
   gap: 8px;
 
+  background-color: transparent;
+
   @container (width = 7rem) {
     width: 36px;
     padding-left: 8px;
@@ -68,6 +71,16 @@
   @media (prefers-color-scheme: dark) {
     border-color: #3F3F46;
     color: #FFFFFF;
+  }
+
+  &:hover {
+    @media (prefers-color-scheme: light) {
+      border-color: darken(#D1D5DB, 15);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      border-color: lighten(#3F3F46, 15);
+    }
   }
 
   &::placeholder {
