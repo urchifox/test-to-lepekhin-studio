@@ -90,11 +90,7 @@
   display: block;
 
   @container (width = 7rem) {
-    display: none;
-  }
-
-  @container (width > 7rem) {
-    display: block;
+    @include visually-hidden;
   }
 }
 

@@ -71,10 +71,6 @@
   font-family: "Inter", sans-serif;
 
   @container (width = 7rem) {
-    display: none;
-  }
-
-  @container (width > 7rem) {
-    display: block;
+    @include visually-hidden;
   }
 }

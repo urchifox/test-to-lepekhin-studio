@@ -10,6 +10,7 @@
   z-index: 1;
   left: 0;
   right: 0;
+  display: none;
 
   @media (prefers-color-scheme: light) {
     color: rgba(255, 255, 255, 0.7);
@@ -81,11 +82,7 @@
 
   &--type-sublist {
     @container (width = 7rem) {
-      display: none;
-    }
-
-    @container (width > 7rem) {
-      display: flex;
+      @include visually-hidden;
     }
   }
 }
@@ -210,14 +207,11 @@
 }
 
 .menu__link-text {
+  display: block;
   line-height: 1.43rem;
 
   @container (width = 7rem) {
-    display: none;
-  }
-
-  @container (width > 7rem) {
-    display: block;
+    @include visually-hidden;
   }
 }
 
