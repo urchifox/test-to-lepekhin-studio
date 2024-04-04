@@ -15,20 +15,10 @@
   @media (prefers-color-scheme: dark) {
     background-color: rgba(39, 39, 42, 1);
   }
-
-  @container (width = 7rem) {
-    grid-template-areas: "avatar";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
-  @container (width > 7rem) {
-    grid-template-areas:
-      "avatar name toggler"
-      "avatar job-title toggler";
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: repeat(2, auto);
-  }
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-areas:
+    "avatar name toggler"
+    "avatar job-title toggler";
 }
 
 .user-info__name {
@@ -40,6 +30,7 @@
   line-height: 1.43rem;
   text-align: left;
 
+  animation: var(--animation);
 
   @container (width = 7rem) {
     @include visually-hidden;
@@ -64,6 +55,8 @@
   font-weight: 400;
   line-height: 1.14rem;
   text-align: left;
+
+  animation: var(--animation);
 
   @container (width = 7rem) {
     @include visually-hidden;
@@ -132,6 +125,7 @@
 
   background-color: transparent;
   cursor: pointer;
+  animation: var(--animation);
 
   &:hover::before {
     background-color: rgba(139, 92, 246, 1);

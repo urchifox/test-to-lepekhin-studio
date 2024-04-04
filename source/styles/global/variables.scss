@@ -6,3 +6,8 @@
     --sidebar-width-opened: 342px;
   }
 }
+
+$transition-time-basic: 3s;
+$transition-function-basic: ease-in-out;
+$transition-delay-basic: calc($transition-time-basic / 2);
+$transition-basic: $transition-time-basic $transition-function-basic;

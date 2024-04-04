@@ -1,3 +1,54 @@
 .visually-hidden {
   @include visually-hidden;
 }
+
+@keyframes visually-hide {
+  to {
+    @include visually-hidden;
+  }
+}
+
+@keyframes visually-unhide {
+  from {
+    @include visually-hidden;
+  }
+}
+
+@keyframes appear {
+  0% {
+    @include visually-hidden;
+    opacity: 0;
+  }
+
+  49% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  49% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    @include visually-hidden;
+    opacity: 0;
+  }
+}
+

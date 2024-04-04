@@ -81,6 +81,8 @@
   list-style: none;
 
   &--type-sublist {
+    animation: var(--animation);
+    
     @container (width = 7rem) {
       @include visually-hidden;
     }
@@ -209,6 +211,7 @@
 .menu__link-text {
   display: block;
   line-height: 1.43rem;
+  animation: var(--animation);
 
   @container (width = 7rem) {
     @include visually-hidden;

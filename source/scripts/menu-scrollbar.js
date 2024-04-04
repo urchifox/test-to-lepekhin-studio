@@ -10,7 +10,7 @@ const setIconDisplay = (icon) => {
 };
 
 const onWidthToglerClick = () => {
-  setIconDisplay(iconBottom);
+  setTimeout(() => setIconDisplay(iconBottom), 1500);
 };
 
 const onDocumentResize = () => {

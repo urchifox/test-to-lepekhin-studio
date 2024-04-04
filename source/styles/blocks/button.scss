@@ -69,6 +69,7 @@
 
 .button__text {
   font-family: "Inter", sans-serif;
+  animation: var(--animation);
 
   @container (width = 7rem) {
     @include visually-hidden;
