@@ -1,0 +1,1 @@
+var e=document.querySelector(".header"),t=e.querySelector(".header__toggler"),o=e.querySelector(".search-form__input"),c=()=>{e.classList.toggle("header--closed"),e.classList.toggle("header--opened"),o.value=""},r=()=>{t.addEventListener("click",c)};export{r as init};

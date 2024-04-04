@@ -1,8 +1,0 @@
-:root {
-  --sidebar-width-closed: 7rem;
-  --sidebar-width-opened: 100%;
-
-  @media (min-width: calc(342px * 1.5)) {
-    --sidebar-width-opened: 342px;
-  }
-}

@@ -1,0 +1,1 @@
+var e=document.querySelector(".header"),t=e.querySelector(".search-form__input"),n=()=>{e.classList.contains("header--closed")&&(e.classList.remove("header--closed"),e.classList.add("header--opened"))},s=()=>{t.addEventListener("click",n),t.addEventListener("input",n)};export{s as init};
