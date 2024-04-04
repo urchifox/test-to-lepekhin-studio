@@ -97,6 +97,7 @@ a {
   z-index: 1;
   left: 0;
   right: 0;
+  display: none;
 }
 @media (prefers-color-scheme: light) {
   .menu__scroll-icon {
@@ -159,12 +160,17 @@ a {
 }
 @container (width = 7rem) {
   .menu__list--type-sublist {
-    display: none;
-  }
-}
-@container (width > 7rem) {
-  .menu__list--type-sublist {
-    display: flex;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+            clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
 }
 
@@ -267,16 +273,22 @@ a {
 }
 
 .menu__link-text {
+  display: block;
   line-height: 1.43rem;
 }
 @container (width = 7rem) {
   .menu__link-text {
-    display: none;
-  }
-}
-@container (width > 7rem) {
-  .menu__link-text {
-    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+            clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
 }
 
@@ -518,12 +530,17 @@ a {
 }
 @container (width = 7rem) {
   .button__text {
-    display: none;
-  }
-}
-@container (width > 7rem) {
-  .button__text {
-    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+            clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
 }
 
@@ -719,7 +736,7 @@ a {
 
 /* MAIN BLOCKS */
 .page {
-  font-size: 1rem;
+  font-size: 14px;
   scroll-behavior: smooth;
 }
 
@@ -846,12 +863,17 @@ a {
 }
 @container (width = 7rem) {
   .header__logo {
-    display: none;
-  }
-}
-@container (width > 7rem) {
-  .header__logo {
-    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+            clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
 }
 
