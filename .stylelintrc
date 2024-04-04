@@ -16,7 +16,9 @@
       true,
       {
         "ignoreFunctions": [
-          "color-opacity"
+          "color-opacity",
+          "lighten",
+          "darken"
         ]
       }
     ]

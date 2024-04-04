@@ -25,16 +25,16 @@
     }
 
     @media (prefers-color-scheme: light) {
-      background-color: #71717A;
+      background-color: rgba(113, 113, 122, 1);
 
       /* stylelint-disable-next-line max-nesting-depth */
       @container (width > 7rem) {
-        background-color: #D4D4D8;
+        background-color: rgba(212, 212, 216, 1);
       }
     }
 
     @media (prefers-color-scheme: dark) {
-      background-color: #71717A;
+      background-color: rgba(113, 113, 122, 1);
     }
   }
 }
@@ -63,29 +63,29 @@
   }
 
   @media (prefers-color-scheme: light) {
-    border-color: #D1D5DB;
-    color: #52525B;
+    border-color: rgba(209, 213, 219, 1);
+    color: rgba(82, 82, 91, 1);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.07);
   }
 
   @media (prefers-color-scheme: dark) {
-    border-color: #3F3F46;
-    color: #FFFFFF;
+    border-color: rgba(63, 63, 70, 1);
+    color: rgba(255, 255, 255, 1);
   }
 
   &:hover {
     @media (prefers-color-scheme: light) {
-      border-color: darken(#D1D5DB, 15);
+      border-color: darken(#d1d5db, 15);
     }
 
     @media (prefers-color-scheme: dark) {
-      border-color: lighten(#3F3F46, 15);
+      border-color: lighten(#3f3f46, 15);
     }
   }
 
   &::placeholder {
     font-weight: 400;
-    line-height: 20px;
+    line-height: 1.43rem;
     text-align: left;
 
     @container (width = 7rem) {
@@ -97,11 +97,11 @@
     }
 
     @media (prefers-color-scheme: light) {
-      color: #A1A1AA;
+      color: rgba(161, 161, 170, 1);
     }
 
     @media (prefers-color-scheme: dark) {
-      color: #71717A;
+      color: rgba(113, 113, 122, 1);
     }
   }
 }

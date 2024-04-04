@@ -7,11 +7,11 @@
   container-type: inline-size;
 
   @media (prefers-color-scheme: light) {
-    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 1);
   }
 
   @media (prefers-color-scheme: dark) {
-    background-color: #18181B;
+    background-color: rgba(24, 24, 27, 1);
   }
 
   &--closed {
@@ -33,11 +33,11 @@
   display: flex;
 
   @media (prefers-color-scheme: light) {
-    background-color: #F9FAFB;
+    background-color: rgba(249, 250, 251, 1);
   }
 
   @media (prefers-color-scheme: dark) {
-    background-color: #27272A;
+    background-color: rgba(39, 39, 42, 1);
   }
 
   @container (width = 7rem) {
@@ -81,7 +81,7 @@
     width: 100%;
     height: 100%;
 
-    background-color: #71717A;
+    background-color: rgba(113, 113, 122, 1);
     mask-image: url("./../../images/icons/stack.svg#burger-menu");
   }
 }

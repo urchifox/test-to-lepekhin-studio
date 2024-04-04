@@ -13,7 +13,7 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    background-color: rgb(39, 39, 42);
+    background-color: rgba(39, 39, 42, 1);
   }
 
   @container (width = 7rem) {
@@ -37,7 +37,7 @@
   grid-area: name;
 
   font-weight: 600;
-  line-height: 20px;
+  line-height: 1.43rem;
   text-align: left;
 
 
@@ -60,9 +60,9 @@
   grid-area: job-title;
 
 
-  font-size: 12px;
+  font-size: 0.86rem;
   font-weight: 400;
-  line-height: 16px;
+  line-height: 1.14rem;
   text-align: left;
 
   @container (width = 7rem) {
