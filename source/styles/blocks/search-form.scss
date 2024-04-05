@@ -12,6 +12,11 @@
     height: 20px;
     mask-image: url("./../../images/icons/stack.svg#search");
 
+    transition:
+      transform $transition-basic,
+      background-color $transition-basic,
+      left $transition-basic,;
+
     @container (width = 7rem) {
       left: 8px;
 

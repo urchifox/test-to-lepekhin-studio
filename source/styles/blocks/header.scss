@@ -99,6 +99,8 @@
 .header__search-form {
   margin-bottom: 16px;
 
+  transition: margin $transition-basic;
+
   @container (width = 7rem) {
     margin-right: 31px;
     margin-left: 31px;
@@ -112,6 +114,8 @@
 
 .header__menu {
   margin-bottom: 24px;
+
+  transition: margin $transition-basic;
 
   @container (width = 7rem) {
     margin-right: 31px;
@@ -128,11 +132,16 @@
   margin-top: auto;
   margin-bottom: 24px;
 
-  @container (width = 7rem) {
-    margin-right: auto;
-    margin-left: auto;
+  transition:
+    margin-left $transition-basic,
+    margin-right $transition-basic,
+    padding-top $transition-basic,
+    padding-bottom $transition-basic;
 
-    width: fit-content;
+
+  @container (width = 7rem) {
+    margin-right: 33px;
+    margin-left: 33px;
   }
 
   @container (width > 7rem) {

@@ -10,7 +10,8 @@
   z-index: 1;
   left: 0;
   right: 0;
-  display: none;
+
+  animation: var(--scroll-icon-animation);
 
   @media (prefers-color-scheme: light) {
     color: rgba(255, 255, 255, 0.7);
@@ -82,7 +83,7 @@
 
   &--type-sublist {
     animation: var(--animation);
-    
+
     @container (width = 7rem) {
       @include visually-hidden;
     }
@@ -94,7 +95,6 @@
 
   padding-top: 8px;
   padding-bottom: 8px;
-  padding-right: 8px;
   border-radius: 4px;
 
   display: flex;
@@ -102,13 +102,24 @@
   align-items: center;
 
   cursor: pointer;
+  transition:
+    padding-left $transition-basic,
+    padding-right $transition-basic;
 
   @container (width = 7rem) {
     padding-left: 8px;
+    padding-right: 8px;
   }
 
   @container (width > 7rem) {
     padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  &:has(.menu__counter) {
+    @container (width > 7rem) {
+      padding-right: 52px;
+    }
   }
 
 
@@ -222,19 +233,28 @@
   border-radius: 50%;
 
   background-color: rgba(139, 92, 246, 1);
+  transition:
+    top $transition-basic,
+    right $transition-basic,
+    width $transition-basic,
+    height $transition-basic,
+    transform $transition-basic;
 
   @container (width = 7rem) {
     position: absolute;
     top: 6px;
     right: 1px;
+    transform: translateY(0);
 
     width: 8px;
     height: 8px;
   }
 
   @container (width > 7rem) {
-    margin-left: auto;
-    margin-right: 8px;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
 
     width: 20px;
     height: 20px;
@@ -246,6 +266,9 @@
 }
 
 .menu__count-number {
+  animation: var(--animation);
+  transition: font-size $transition-basic;
+
   @container (width = 7rem) {
     font-size: 0;
   }

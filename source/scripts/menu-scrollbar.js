@@ -1,32 +1,59 @@
+const ANIMATION_APPEARANCE = 'appear 3s ease-in-out both';
+const ANIMATION_DISAPPEARANCE = 'disappear 3s ease-in-out both';
+
 const menu = document.querySelector('.menu');
 const widthToggler = document.querySelector('.header__toggler');
 const iconTop = menu.querySelector('.menu__scroll-icon--position-top');
 const iconBottom = menu.querySelector('.menu__scroll-icon--position-bottom');
+let isVisible;
 
 const isOverflowedVertically = () => menu.scrollHeight > menu.clientHeight;
 
-const setIconDisplay = (icon) => {
-  icon.style.display = isOverflowedVertically() ? 'block' : 'none';
+const setIconVisibility = (icon) => {
+  console.log(isVisible);
+  console.log(isOverflowedVertically());
+  if (isOverflowedVertically() !== isVisible) {
+    const animation = isOverflowedVertically ? ANIMATION_APPEARANCE : ANIMATION_DISAPPEARANCE;
+    icon.style.setProperty('--scroll-icon-animation', animation);
+    isVisible = isOverflowedVertically();
+  }
 };
 
-const onWidthToglerClick = () => {
-  setTimeout(() => setIconDisplay(iconBottom), 1500);
+const onWidthTogglerClick = () => {
+  setTimeout(() => setIconVisibility(iconBottom), 3000);
 };
 
 const onDocumentResize = () => {
-  setIconDisplay(iconBottom);
+  setIconVisibility(iconBottom);
 };
 
 const onMenuScroll = () => {
-  iconTop.style.display = menu.scrollTop > 0 ? 'block' : 'none';
-  iconBottom.style.display = menu.scrollHeight - menu.clientHeight > menu.scrollTop ? 'block' : 'none';
+  if (menu.scrollTop > 0) {
+    iconTop.style.setProperty('--scroll-icon-animation', ANIMATION_APPEARANCE);
+  } else {
+    iconTop.style.setProperty('--scroll-icon-animation', ANIMATION_DISAPPEARANCE);
+  }
+
+  if (menu.scrollHeight - menu.clientHeight > menu.scrollTop) {
+    iconBottom.style.setProperty('--scroll-icon-animation', ANIMATION_APPEARANCE);
+  } else {
+    iconBottom.style.setProperty('--scroll-icon-animation', ANIMATION_DISAPPEARANCE);
+  }
 };
 
 const init = () => {
-  setIconDisplay(iconBottom);
+  isVisible = isOverflowedVertically();
+  iconTop.style.setProperty('--scroll-icon-animation', 'disappear 0s both');
+
+  if (isOverflowedVertically()) {
+    iconBottom.style.setProperty('--scroll-icon-animation', 'appear 0s both');
+  } else {
+    iconBottom.style.setProperty('--scroll-icon-animation', 'disappear 0s both');
+  }
+
   window.addEventListener('resize', onDocumentResize);
   menu.addEventListener('scroll', onMenuScroll);
-  widthToggler.addEventListener('click', onWidthToglerClick);
+  widthToggler.addEventListener('click', onWidthTogglerClick);
 };
 
 export {init};
