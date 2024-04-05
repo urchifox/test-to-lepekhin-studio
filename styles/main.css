@@ -177,7 +177,7 @@ a {
   z-index: 1;
   left: 0;
   right: 0;
-  display: none;
+  animation: var(--scroll-icon-animation);
 }
 @media (prefers-color-scheme: light) {
   .menu__scroll-icon {
@@ -261,21 +261,28 @@ a {
   position: relative;
   padding-top: 8px;
   padding-bottom: 8px;
-  padding-right: 8px;
   border-radius: 4px;
   display: flex;
   gap: 8px;
   align-items: center;
   cursor: pointer;
+  transition: padding-left 3s ease-in-out, padding-right 3s ease-in-out;
 }
 @container (width = 7rem) {
   .menu__link {
     padding-left: 8px;
+    padding-right: 8px;
   }
 }
 @container (width > 7rem) {
   .menu__link {
     padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@container (width > 7rem) {
+  .menu__link:has(.menu__counter) {
+    padding-right: 52px;
   }
 }
 .menu__link:hover {
@@ -379,20 +386,24 @@ a {
 .menu__counter {
   border-radius: 50%;
   background-color: rgb(139, 92, 246);
+  transition: top 3s ease-in-out, right 3s ease-in-out, width 3s ease-in-out, height 3s ease-in-out, transform 3s ease-in-out;
 }
 @container (width = 7rem) {
   .menu__counter {
     position: absolute;
     top: 6px;
     right: 1px;
+    transform: translateY(0);
     width: 8px;
     height: 8px;
   }
 }
 @container (width > 7rem) {
   .menu__counter {
-    margin-left: auto;
-    margin-right: 8px;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
     width: 20px;
     height: 20px;
     display: flex;
@@ -401,6 +412,10 @@ a {
   }
 }
 
+.menu__count-number {
+  animation: var(--animation);
+  transition: font-size 3s ease-in-out;
+}
 @container (width = 7rem) {
   .menu__count-number {
     font-size: 0;
@@ -446,6 +461,7 @@ a {
   height: 20px;
   -webkit-mask-image: url("../images/icons/stack.svg#search");
           mask-image: url("../images/icons/stack.svg#search");
+  transition: transform 3s ease-in-out, background-color 3s ease-in-out, left 3s ease-in-out;
 }
 @container (width = 7rem) {
   .search-form::before {
@@ -957,6 +973,7 @@ a {
 
 .header__search-form {
   margin-bottom: 16px;
+  transition: margin 3s ease-in-out;
 }
 @container (width = 7rem) {
   .header__search-form {
@@ -973,6 +990,7 @@ a {
 
 .header__menu {
   margin-bottom: 24px;
+  transition: margin 3s ease-in-out;
 }
 @container (width = 7rem) {
   .header__menu {
@@ -990,13 +1008,12 @@ a {
 .header__button {
   margin-top: auto;
   margin-bottom: 24px;
+  transition: margin-left 3s ease-in-out, margin-right 3s ease-in-out, padding-top 3s ease-in-out, padding-bottom 3s ease-in-out;
 }
 @container (width = 7rem) {
   .header__button {
-    margin-right: auto;
-    margin-left: auto;
-    width: -moz-fit-content;
-    width: fit-content;
+    margin-right: 33px;
+    margin-left: 33px;
   }
 }
 @container (width > 7rem) {
