@@ -1,4 +1,5 @@
 const links = document.querySelectorAll('.menu__link[data-counter]');
+const projectLinks = document.querySelectorAll('.menu__link--type-project');
 
 const getTemplate = (count) => `
   <div class="menu__counter">
@@ -16,6 +17,10 @@ const addCounter = (count, parentLink) => {
 const init = () => {
   links.forEach((link) => {
     addCounter(link.dataset.counter, link);
+  });
+
+  projectLinks.forEach((link) => {
+    link.style.setProperty('--icon-color', link.dataset.bookmarkColor);
   });
 };
 
