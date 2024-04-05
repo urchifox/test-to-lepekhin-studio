@@ -1,12 +1,28 @@
 .user-info {
   padding-top: 24px;
-  padding-right: 24px;
   padding-bottom: 24px;
-  padding-left: 24px;
 
   display: grid;
-  gap: 2px 16px;
+  gap: 2px 0;
   align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "avatar name toggler"
+    "avatar job-title toggler";
+
+  transition:
+    padding-left $transition-basic,
+    padding-right $transition-basic;
+
+  @container (width = 7rem) {
+    padding-right: 29px;
+    padding-left: 29px;
+  }
+
+  @container (width > 7rem) {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
 
   @media (prefers-color-scheme: light) {
     background-color: rgba(244, 244, 245, 1);
@@ -15,15 +31,14 @@
   @media (prefers-color-scheme: dark) {
     background-color: rgba(39, 39, 42, 1);
   }
-  grid-template-columns: max-content 1fr max-content;
-  grid-template-areas:
-    "avatar name toggler"
-    "avatar job-title toggler";
+
 }
 
 .user-info__name {
   margin-top: 0;
+  margin-right: 16px;
   margin-bottom: 0;
+  margin-left: 16px;
   grid-area: name;
 
   font-weight: 600;
@@ -47,9 +62,10 @@
 
 .user-info__job-title {
   margin-top: 0;
+  margin-right: 16px;
   margin-bottom: 0;
+  margin-left: 16px;
   grid-area: job-title;
-
 
   font-size: 0.86rem;
   font-weight: 400;

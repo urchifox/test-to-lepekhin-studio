@@ -1,5 +1,5 @@
-const ANIMATION_APPEARANCE = 'appear 3s ease-in-out both';
-const ANIMATION_DISAPPEARANCE = 'disappear 3s ease-in-out both';
+const ANIMATION_APPEARANCE = 'appear 0.3s ease-in-out both';
+const ANIMATION_DISAPPEARANCE = 'disappear 0.3s ease-in-out both';
 const header = document.querySelector('.header');
 const button = header.querySelector('.header__toggler');
 const input = header.querySelector('.search-form__input');

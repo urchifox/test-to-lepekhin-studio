@@ -1,5 +1,5 @@
-const ANIMATION_APPEARANCE = 'appear 3s ease-in-out both';
-const ANIMATION_DISAPPEARANCE = 'disappear 3s ease-in-out both';
+const ANIMATION_APPEARANCE = 'appear 0.3s ease-in-out both';
+const ANIMATION_DISAPPEARANCE = 'disappear 0.3s ease-in-out both';
 
 const menu = document.querySelector('.menu');
 const widthToggler = document.querySelector('.header__toggler');
@@ -10,17 +10,15 @@ let isVisible;
 const isOverflowedVertically = () => menu.scrollHeight > menu.clientHeight;
 
 const setIconVisibility = (icon) => {
-  console.log(isVisible);
-  console.log(isOverflowedVertically());
   if (isOverflowedVertically() !== isVisible) {
-    const animation = isOverflowedVertically ? ANIMATION_APPEARANCE : ANIMATION_DISAPPEARANCE;
+    const animation = isOverflowedVertically() ? ANIMATION_APPEARANCE : ANIMATION_DISAPPEARANCE;
     icon.style.setProperty('--scroll-icon-animation', animation);
     isVisible = isOverflowedVertically();
   }
 };
 
 const onWidthTogglerClick = () => {
-  setTimeout(() => setIconVisibility(iconBottom), 3000);
+  setTimeout(() => setIconVisibility(iconBottom), 300);
 };
 
 const onDocumentResize = () => {
