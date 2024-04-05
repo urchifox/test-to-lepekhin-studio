@@ -18,7 +18,6 @@
   0% {
     @include visually-hidden;
     font-size: 1px;
-    transform-origin: left center;
     transform: scaleX(0);
     opacity: 0;
   }
@@ -26,13 +25,11 @@
   50% {
     font-size: 1px;
     transform: scaleX(0);
-    transform-origin: left center;
     opacity: 0;
   }
 
   100% {
     transform: scaleX(1);
-    transform-origin: left center;
     opacity: 1;
   }
 }
@@ -40,13 +37,11 @@
 @keyframes disappear {
   0% {
     transform: scaleX(1);
-    transform-origin: left center;
     opacity: 1;
   }
 
   50% {
     font-size: 1px;
-    transform-origin: left center;
     transform: scaleX(0);
     opacity: 0;
   }
@@ -54,8 +49,27 @@
   100% {
     @include visually-hidden;
     font-size: 1px;
-    transform-origin: left center;
     transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes appear-scroll {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear-scroll {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
     opacity: 0;
   }
 }

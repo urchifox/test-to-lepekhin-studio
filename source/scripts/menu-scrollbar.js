@@ -1,10 +1,11 @@
-const ANIMATION_APPEARANCE = 'appear 0.3s ease-in-out both';
-const ANIMATION_DISAPPEARANCE = 'disappear 0.3s ease-in-out both';
+const ANIMATION_APPEARANCE = 'appear-scroll 0.3s ease-in-out both';
+const ANIMATION_DISAPPEARANCE = 'disappear-scroll 0.3s ease-in-out both';
 
 const menu = document.querySelector('.menu');
 const widthToggler = document.querySelector('.header__toggler');
 const iconTop = menu.querySelector('.menu__scroll-icon--position-top');
 const iconBottom = menu.querySelector('.menu__scroll-icon--position-bottom');
+const input = document.querySelector('.search-form__input');
 let isVisible;
 
 const isOverflowedVertically = () => menu.scrollHeight > menu.clientHeight;
@@ -17,7 +18,7 @@ const setIconVisibility = (icon) => {
   }
 };
 
-const onWidthTogglerClick = () => {
+const onMenuResize = () => {
   setTimeout(() => setIconVisibility(iconBottom), 300);
 };
 
@@ -51,7 +52,9 @@ const init = () => {
 
   window.addEventListener('resize', onDocumentResize);
   menu.addEventListener('scroll', onMenuScroll);
-  widthToggler.addEventListener('click', onWidthTogglerClick);
+  widthToggler.addEventListener('click', onMenuResize);
+  input.addEventListener('click', onMenuResize);
+  input.addEventListener('input', onMenuResize);
 };
 
 export {init};

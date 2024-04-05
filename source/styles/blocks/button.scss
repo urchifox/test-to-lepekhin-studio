@@ -44,6 +44,13 @@
     color: rgba(255, 255, 255, 1);
     background-color: rgba(124, 58, 237, 1);
 
+    transition:
+      background-color $transition-basic,
+      margin-left $transition-basic,
+      margin-right $transition-basic,
+      padding-top $transition-basic,
+      padding-bottom $transition-basic;
+
     &:hover {
       background-color: lighten(rgba(124, 58, 237, 1), 10);
     }
@@ -70,6 +77,7 @@
 .button__text {
   font-family: "Inter", sans-serif;
   animation: var(--animation);
+  transform-origin: left center;
 
   @container (width = 7rem) {
     @include visually-hidden;

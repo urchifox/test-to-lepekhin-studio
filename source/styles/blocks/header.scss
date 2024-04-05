@@ -84,12 +84,14 @@
 
     background-color: rgba(113, 113, 122, 1);
     mask-image: url("./../../images/icons/stack.svg#burger-menu");
+    transition: background-color $transition-basic;
   }
 }
 
 .header__logo {
   display: block;
   animation: var(--animation);
+  transform-origin: left center;
 
   @container (width = 7rem) {
     @include visually-hidden;
@@ -131,13 +133,6 @@
 .header__button {
   margin-top: auto;
   margin-bottom: 24px;
-
-  transition:
-    margin-left $transition-basic,
-    margin-right $transition-basic,
-    padding-top $transition-basic,
-    padding-bottom $transition-basic;
-
 
   @container (width = 7rem) {
     margin-right: 33px;
