@@ -128,26 +128,28 @@ a {
             clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
-    opacity: 0;
-  }
-  49% {
+    font-size: 1px;
+    transform: scaleX(0);
     opacity: 0;
   }
   50% {
+    font-size: 1px;
+    transform: scaleX(0);
     opacity: 0;
   }
   100% {
+    transform: scaleX(1);
     opacity: 1;
   }
 }
 @keyframes disappear {
   0% {
+    transform: scaleX(1);
     opacity: 1;
   }
-  49% {
-    opacity: 0;
-  }
   50% {
+    font-size: 1px;
+    transform: scaleX(0);
     opacity: 0;
   }
   100% {
@@ -162,6 +164,24 @@ a {
             clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
+    font-size: 1px;
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+@keyframes appear-scroll {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes disappear-scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
     opacity: 0;
   }
 }
@@ -178,6 +198,7 @@ a {
   left: 0;
   right: 0;
   animation: var(--scroll-icon-animation);
+  transform-origin: center center;
 }
 @media (prefers-color-scheme: light) {
   .menu__scroll-icon {
@@ -240,6 +261,7 @@ a {
 }
 .menu__list--type-sublist {
   animation: var(--animation);
+  transform-origin: left center;
 }
 @container (width = 7rem) {
   .menu__list--type-sublist {
@@ -265,8 +287,7 @@ a {
   display: flex;
   gap: 8px;
   align-items: center;
-  cursor: pointer;
-  transition: padding-left 3s ease-in-out, padding-right 3s ease-in-out;
+  transition: color 0.3s ease-in-out, padding-left 0.3s ease-in-out, padding-right 0.3s ease-in-out;
 }
 @container (width = 7rem) {
   .menu__link {
@@ -293,6 +314,12 @@ a {
 }
 .menu__link:focus-visible {
   outline-offset: -2px;
+}
+.menu__link:not(.menu__link--is-current) {
+  cursor: pointer;
+}
+.menu__link--is-current {
+  cursor: auto;
 }
 @media (prefers-color-scheme: light) {
   .menu__link--is-current {
@@ -344,6 +371,7 @@ a {
   flex-shrink: 0;
   -webkit-mask-image: var(--icon-url);
           mask-image: var(--icon-url);
+  transition: background-color 0.3s ease-in-out;
 }
 @media (prefers-color-scheme: light) {
   .menu__link:not(.menu__link--type-project)::before {
@@ -366,6 +394,7 @@ a {
   display: block;
   line-height: 1.43rem;
   animation: var(--animation);
+  transform-origin: left center;
 }
 @container (width = 7rem) {
   .menu__link-text {
@@ -386,7 +415,7 @@ a {
 .menu__counter {
   border-radius: 50%;
   background-color: rgb(139, 92, 246);
-  transition: top 3s ease-in-out, right 3s ease-in-out, width 3s ease-in-out, height 3s ease-in-out, transform 3s ease-in-out;
+  transition: top 0.3s ease-in-out, right 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 @container (width = 7rem) {
   .menu__counter {
@@ -414,7 +443,8 @@ a {
 
 .menu__count-number {
   animation: var(--animation);
-  transition: font-size 3s ease-in-out;
+  transform-origin: left center;
+  transition: font-size 0.3s ease-in-out;
 }
 @container (width = 7rem) {
   .menu__count-number {
@@ -461,7 +491,7 @@ a {
   height: 20px;
   -webkit-mask-image: url("../images/icons/stack.svg#search");
           mask-image: url("../images/icons/stack.svg#search");
-  transition: transform 3s ease-in-out, background-color 3s ease-in-out, left 3s ease-in-out;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 @container (width = 7rem) {
   .search-form::before {
@@ -502,6 +532,7 @@ a {
   display: flex;
   gap: 8px;
   background-color: transparent;
+  transition: border-color 0.3s ease-in-out;
 }
 @container (width = 7rem) {
   .search-form__input {
@@ -605,6 +636,7 @@ a {
 .button--type-primary {
   color: rgb(255, 255, 255);
   background-color: rgb(124, 58, 237);
+  transition: background-color 0.3s ease-in-out, margin-left 0.3s ease-in-out, margin-right 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
 }
 .button--type-primary:hover {
   background-color: #9b69f1;
@@ -628,6 +660,7 @@ a {
 .button__text {
   font-family: "Inter", sans-serif;
   animation: var(--animation);
+  transform-origin: left center;
 }
 @container (width = 7rem) {
   .button__text {
@@ -647,14 +680,25 @@ a {
 
 .user-info {
   padding-top: 24px;
-  padding-right: 24px;
   padding-bottom: 24px;
-  padding-left: 24px;
   display: grid;
-  gap: 2px 16px;
+  gap: 2px 0;
   align-items: center;
-  grid-template-columns: max-content 1fr max-content;
+  grid-template-columns: auto 1fr auto;
   grid-template-areas: "avatar name toggler" "avatar job-title toggler";
+  transition: padding-left 0.3s ease-in-out, padding-right 0.3s ease-in-out;
+}
+@container (width = 7rem) {
+  .user-info {
+    padding-right: 29px;
+    padding-left: 29px;
+  }
+}
+@container (width > 7rem) {
+  .user-info {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
 }
 @media (prefers-color-scheme: light) {
   .user-info {
@@ -669,12 +713,15 @@ a {
 
 .user-info__name {
   margin-top: 0;
+  margin-right: 16px;
   margin-bottom: 0;
+  margin-left: 16px;
   grid-area: name;
   font-weight: 600;
   line-height: 1.43rem;
   text-align: left;
   animation: var(--animation);
+  transform-origin: left center;
 }
 @container (width = 7rem) {
   .user-info__name {
@@ -704,13 +751,16 @@ a {
 
 .user-info__job-title {
   margin-top: 0;
+  margin-right: 16px;
   margin-bottom: 0;
+  margin-left: 16px;
   grid-area: job-title;
   font-size: 0.86rem;
   font-weight: 400;
   line-height: 1.14rem;
   text-align: left;
   animation: var(--animation);
+  transform-origin: left center;
 }
 @container (width = 7rem) {
   .user-info__job-title {
@@ -758,6 +808,7 @@ a {
   border-radius: 50%;
   background-color: rgb(34, 197, 94);
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
 .user-info__status-menu:hover {
   transform: scale(1.2);
@@ -786,6 +837,8 @@ a {
   background-color: transparent;
   cursor: pointer;
   animation: var(--animation);
+  transform-origin: left center;
+  transition: background-color 0.3s ease-in-out;
 }
 .user-info__toggle:hover::before {
   background-color: rgb(139, 92, 246);
@@ -872,7 +925,7 @@ a {
   flex-direction: column;
   overflow: auto;
   container-type: inline-size;
-  transition: width 3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 @media (prefers-color-scheme: light) {
   .header {
@@ -949,11 +1002,13 @@ a {
   background-color: rgb(113, 113, 122);
   -webkit-mask-image: url("../images/icons/stack.svg#burger-menu");
           mask-image: url("../images/icons/stack.svg#burger-menu");
+  transition: background-color 0.3s ease-in-out;
 }
 
 .header__logo {
   display: block;
   animation: var(--animation);
+  transform-origin: left center;
 }
 @container (width = 7rem) {
   .header__logo {
@@ -973,7 +1028,7 @@ a {
 
 .header__search-form {
   margin-bottom: 16px;
-  transition: margin 3s ease-in-out;
+  transition: margin 0.3s ease-in-out;
 }
 @container (width = 7rem) {
   .header__search-form {
@@ -990,7 +1045,7 @@ a {
 
 .header__menu {
   margin-bottom: 24px;
-  transition: margin 3s ease-in-out;
+  transition: margin 0.3s ease-in-out;
 }
 @container (width = 7rem) {
   .header__menu {
@@ -1008,7 +1063,6 @@ a {
 .header__button {
   margin-top: auto;
   margin-bottom: 24px;
-  transition: margin-left 3s ease-in-out, margin-right 3s ease-in-out, padding-top 3s ease-in-out, padding-bottom 3s ease-in-out;
 }
 @container (width = 7rem) {
   .header__button {
