@@ -11,7 +11,7 @@
   left: 0;
   right: 0;
 
-  animation: var(--scroll-icon-animation);
+  animation: var(--animation-scroll-icon);
   transform-origin: center center;
 
   @media (prefers-color-scheme: light) {
@@ -83,7 +83,7 @@
   list-style: none;
 
   &--type-sublist {
-    animation: var(--animation);
+    animation: var(--animation-menu-content);
     transform-origin: left center;
 
     @container (width = 7rem) {
@@ -230,7 +230,7 @@
 .menu__link-text {
   display: block;
   line-height: 1.43rem;
-  animation: var(--animation);
+  animation: var(--animation-menu-content);
   transform-origin: left center;
 
   @container (width = 7rem) {
@@ -275,7 +275,7 @@
 }
 
 .menu__count-number {
-  animation: var(--animation);
+  animation: var(--animation-menu-content);
   transform-origin: left center;
   transition: font-size $transition-basic;
 

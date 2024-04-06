@@ -1,23 +1,18 @@
-const ANIMATION_APPEARANCE = 'appear 0.3s ease-in-out both';
-const ANIMATION_DISAPPEARANCE = 'disappear 0.3s ease-in-out both';
+import {animateMenuResize} from './animation-manager';
+
 const header = document.querySelector('.header');
-const button = header.querySelector('.header__toggler');
-const input = header.querySelector('.search-form__input');
+const toggler = header.querySelector('.header__toggler');
 
-const onButtonClick = () => {
-  if (header.classList.contains('header--closed')) {
-    document.documentElement.style.setProperty('--animation', ANIMATION_APPEARANCE);
-  } else {
-    document.documentElement.style.setProperty('--animation', ANIMATION_DISAPPEARANCE);
-  }
-
+const toggleMenuWidth = () => {
+  animateMenuResize();
   header.classList.toggle('header--closed');
   header.classList.toggle('header--opened');
-  input.value = '';
 };
+
+const onTogglerClick = () => toggleMenuWidth();
 
 const init = () => {
-  button.addEventListener('click', onButtonClick);
+  toggler.addEventListener('click', onTogglerClick);
 };
 
-export {init};
+export {init, toggleMenuWidth};

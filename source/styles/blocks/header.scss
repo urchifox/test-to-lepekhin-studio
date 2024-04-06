@@ -90,7 +90,7 @@
 
 .header__logo {
   display: block;
-  animation: var(--animation);
+  animation: var(--animation-menu-content);
   transform-origin: left center;
 
   @container (width = 7rem) {
