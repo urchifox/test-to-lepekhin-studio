@@ -9,10 +9,21 @@ const statusSettings = new Map([
   }]
 ]);
 
-const statusMenu = document.querySelector('.status-menu');
+const header = document.querySelector('.header');
+const statusMenu = header.querySelector('.status-menu');
 const text = statusMenu.querySelector('.status-menu__current');
 const toggler = statusMenu.querySelector('.status-menu__toggler');
 const popup = statusMenu.querySelector('.status-menu__popup');
+
+const setMaxWidth = () => {
+  const headerRect = header.getBoundingClientRect();
+  const popupRect = popup.getBoundingClientRect();
+  const screenWidth = window.screen.width;
+  const distance = popupRect.left - headerRect.left;
+  const maxWidth = screenWidth - distance - 24;
+
+  popup.style.maxWidth = `${maxWidth}px`;
+};
 
 const onStatusChange = (evt) => {
   const status = statusSettings.get(evt.target.id);
@@ -54,6 +65,7 @@ function togglePopup () {
 }
 
 const init = () => {
+  setMaxWidth();
   toggler.addEventListener('click', onTogglerClick);
 };
 
