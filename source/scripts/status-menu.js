@@ -9,16 +9,10 @@ const statusSettings = new Map([
   }]
 ]);
 
-
 const statusMenu = document.querySelector('.status-menu');
 const text = statusMenu.querySelector('.status-menu__current');
 const toggler = statusMenu.querySelector('.status-menu__toggler');
 const popup = statusMenu.querySelector('.status-menu__popup');
-
-const togglePopup = () => {
-  popup.classList.toggle('status-menu__popup--is-opened');
-  popup.classList.toggle('status-menu__popup--is-closed');
-};
 
 const onStatusChange = (evt) => {
   const status = statusSettings.get(evt.target.id);
@@ -29,21 +23,24 @@ const onStatusChange = (evt) => {
 const onOverlayClick = (evt) => {
   if (!evt.target.closest('.status-menu__popup')) {
     togglePopup();
-    document.removeEventListener('click', onOverlayClick);
-    popup.removeEventListener('change', onStatusChange);
   }
 };
 
 const onEscKeydown = (evt) => {
   if (evt.key === 'Escape') {
     togglePopup();
-    document.removeEventListener('keydown', onEscKeydown);
   }
 };
 
 const onTogglerClick = (evt) => {
   evt.stopPropagation();
   togglePopup();
+};
+
+
+function togglePopup () {
+  popup.classList.toggle('status-menu__popup--is-opened');
+  popup.classList.toggle('status-menu__popup--is-closed');
 
   if (popup.classList.contains('status-menu__popup--is-opened')) {
     document.addEventListener('click', onOverlayClick);
@@ -51,9 +48,10 @@ const onTogglerClick = (evt) => {
     popup.addEventListener('change', onStatusChange);
   } else {
     document.removeEventListener('click', onOverlayClick);
+    document.removeEventListener('keydown', onEscKeydown);
     popup.removeEventListener('change', onStatusChange);
   }
-};
+}
 
 const init = () => {
   toggler.addEventListener('click', onTogglerClick);
