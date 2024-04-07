@@ -51,11 +51,10 @@
   }
 }
 
-
 .user-menu__popup {
   position: absolute;
   bottom: 0;
-  right: 100%;
+  right: calc(100% + 8px);
 
   padding-top: 20px;
   padding-right: 20px;
@@ -77,12 +76,25 @@
   }
 
   &--is-closed {
-    display: none;
-    transform: scale(0);
+    visibility: hidden;
+    transform: translateX(8px);
+    opacity: 0;
+
+    transition:
+      visibility 0s  $transition-time-basic,
+      transform $transition-basic,
+      opacity $transition-basic;
   }
 
   &--is-opened {
-    transform: scale(1);
+    visibility: visible;
+    transform: translateX(0);
+    opacity: 1;
+
+    transition:
+      visibility 0s,
+      transform $transition-basic,
+      opacity $transition-basic;
   }
 }
 
