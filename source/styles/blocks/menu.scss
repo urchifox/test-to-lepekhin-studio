@@ -184,6 +184,12 @@
     }
   }
 
+  &--type-project {
+    @container (width = 7rem) {
+      display: none;
+    }
+  }
+
   &--type-project::before {
     content: "";
 

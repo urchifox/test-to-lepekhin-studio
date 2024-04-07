@@ -115,33 +115,40 @@
       <p class="user-info__job-title">Разработчик</p>
 
       <div class="user-info__avatar-wrapper">
-        <button class="user-info__status-menu"
-          type="button"
-          aria-expanded="false"
-          aria-controls="status-menu"
-        >
-          <span class="visually-hidden">Изменить статус</span>
-        </button>
-        <!-- Гипотетический вариант содержания меню -->
-        <!-- <form class="user-info__status-menu status-menu" id="status-menu" action="#">
-          <label class="status-menu__label">
-            <input class="status-menu__radio"
-              type="radio"
-              name="status"
-              value="online"
-              checked
-            >
-            В сети
-          </label>
-          <label class="status-menu__label">
-            <input class="status-menu__radio"
-              type="radio"
-              name="status"
-              value="dont-disturb"
-            >
-            Не беспокоить
-          </label>
-        </form> -->
+        <div class="user-info__status-menu status-menu">
+          <p class="visually-hidden">Текущий статус
+            <span class="status-menu__current">В сети</span>
+          </p>
+          <button class="status-menu__toggler"
+            type="button"
+            aria-expanded="false"
+            aria-controls="status-menu"
+          >
+            <span class="visually-hidden">Изменить статус</span>
+          </button>
+          <!-- Гипотетический вариант содержания меню -->
+          <form class="status-menu__popup status-menu__popup--is-closed" id="status-menu" action="#">
+            <div class="status-menu__row">
+              <label class="status-menu__label status-menu__label--status-online" for="status-online">В сети</label>
+              <input class="visually-hidden"
+                id="status-online"
+                type="radio"
+                name="status"
+                value="online"
+                checked
+              >
+            </div>
+            <div class="status-menu__row">
+              <label class="status-menu__label status-menu__label--status-dont-disturb" for="status-dont-disturb">Не беспокоить</label>
+              <input class="visually-hidden"
+                id="status-dont-disturb"
+                type="radio"
+                name="status"
+                value="dont-disturb"
+              >
+            </div>
+          </form>
+        </div>
         <picture>
           <source
             type="image/webp"
@@ -156,7 +163,7 @@
         </picture>
       </div>
 
-      <button class="user-info__toggle"
+      <button class="user-info__menu-toggler"
         type="button"
         aria-expanded="false"
         aria-controls="user-menu"
