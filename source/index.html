@@ -163,24 +163,26 @@
         </picture>
       </div>
 
-      <button class="user-info__menu-toggler"
-        type="button"
-        aria-expanded="false"
-        aria-controls="user-menu"
-      >
-        <span class="visually-hidden">Открыть контекстное меню</span>
-      </button>
-      <!-- Гипотетический вариант содержания меню -->
-      <!-- <nav class="user-info__menu" id="user-menu" aria-label="Меню пользователя">
-        <ul class="user-info__menu-list">
-          <li class="user-info__user-list">
-            <a class="user-info__user-link" href="#">Настройки</a>
-          </li>
-          <li class="user-info__user-list">
-            <a class="user-info__user-link" href="#">Выйти</a>
-          </li>
-        </ul>
-      </nav> -->
+      <div class="user-info__user-menu user-menu">
+        <button class="user-menu__toggler"
+          type="button"
+          aria-expanded="false"
+          aria-controls="user-menu"
+        >
+          <span class="visually-hidden">Открыть контекстное меню</span>
+        </button>
+        <!-- Гипотетический вариант содержания меню -->
+        <nav class="user-menu__popup user-menu__popup--is-closed" id="user-menu" aria-label="Меню пользователя">
+          <ul class="user-menu__popup-list">
+            <li class="user-menu__user-list">
+              <a class="user-menu__user-link" href="#">Настройки</a>
+            </li>
+            <li class="user-menu__user-list">
+              <a class="user-menu__user-link" href="#">Выйти</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 

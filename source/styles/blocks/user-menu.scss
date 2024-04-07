@@ -1,0 +1,127 @@
+.user-menu {
+  position: relative;
+  grid-area: toggler;
+}
+
+.user-menu__toggler {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  width: 24px;
+  height: 24px;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  cursor: pointer;
+  animation: var(--animation-menu-content);
+  transform-origin: left center;
+  transition: background-color $transition-basic;
+
+  &:hover::before {
+    background-color: rgba(139, 92, 246, 1);
+  }
+
+  &:active::before {
+    background-color: lighten(rgba(139, 92, 246, 1), 15);
+  }
+
+  @container (width = 7rem) {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    mask-image: url("./../../images/icons/stack.svg#more-vertical");
+
+    @media (prefers-color-scheme: light) {
+      background-color: rgba(161, 161, 170, 1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba(113, 113, 122, 1);
+    }
+  }
+}
+
+
+.user-menu__popup {
+  position: absolute;
+  bottom: 0;
+  right: 100%;
+
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  width: auto;
+  border-radius: 4px;
+
+  @media (prefers-color-scheme: light) {
+    background-color: rgba(249, 250, 251, 1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba(39, 39, 42, 1);
+  }
+
+  @container (width = 7rem) {
+    display: none;
+  }
+
+  &--is-closed {
+    display: none;
+    transform: scale(0);
+  }
+
+  &--is-opened {
+    transform: scale(1);
+  }
+}
+
+.user-menu__popup-list {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  padding-left: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  list-style: none;
+}
+
+.user-menu__user-link {
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  border-radius: 4px;
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  cursor: pointer;
+  transition:
+    color $transition-basic,
+    padding-left $transition-basic,
+    padding-right $transition-basic;
+
+
+  &:hover {
+    color: rgba(139, 92, 246, 1);
+  }
+
+  &:active {
+    color: lighten(rgba(139, 92, 246, 1), 15);
+  }
+}
