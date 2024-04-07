@@ -30,6 +30,7 @@
 
 .status-menu__popup {
   position: absolute;
+  z-index: 1;
   bottom: 0;
   left: calc(100% + 8px);
 
