@@ -1,12 +1,10 @@
 @keyframes show-menu-content {
   0% {
-    @include visually-hidden;
-    font-size: 1px;
-    transform: scaleX(0);
-    opacity: 0;
-  }
+    margin: -1px;
 
-  50% {
+    width: 1px;
+    height: 1px;
+
     font-size: 1px;
     transform: scaleX(0);
     opacity: 0;
@@ -24,14 +22,12 @@
     opacity: 1;
   }
 
-  50% {
-    font-size: 1px;
-    transform: scaleX(0);
-    opacity: 0;
-  }
-
   100% {
-    @include visually-hidden;
+    margin: -1px;
+
+    width: 1px;
+    height: 1px;
+
     font-size: 1px;
     transform: scaleX(0);
     opacity: 0;
