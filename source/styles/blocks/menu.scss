@@ -187,7 +187,7 @@
 
   &--type-project {
     @container (width = 7rem) {
-      display: none;
+      @include visually-hidden;
     }
   }
 

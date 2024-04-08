@@ -1,9 +1,6 @@
 @keyframes show-menu-content {
   0% {
-    margin: -1px;
-
-    width: 1px;
-    height: 1px;
+    @include visually-hidden;
 
     font-size: 1px;
     transform: scaleX(0);
@@ -23,10 +20,7 @@
   }
 
   100% {
-    margin: -1px;
-
-    width: 1px;
-    height: 1px;
+    @include visually-hidden;
 
     font-size: 1px;
     transform: scaleX(0);

@@ -31,7 +31,7 @@
   }
 
   @container (width = 7rem) {
-    display: none;
+    @include visually-hidden;
   }
 
   &::before {
@@ -73,7 +73,7 @@
   }
 
   @container (width = 7rem) {
-    display: none;
+    @include visually-hidden;
   }
 
   &--is-closed {
