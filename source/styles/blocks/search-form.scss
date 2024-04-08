@@ -17,13 +17,13 @@
       background-color $transition-basic,
       left $transition-basic,;
 
-    @container (width = 7rem) {
+    @container (width = 98px) {
       left: 8px;
 
       transform: scale(1);
     }
 
-    @container (width > 7rem) {
+    @container (width > 98px) {
       left: 16px;
 
       transform: scale(0.8);
@@ -33,7 +33,7 @@
       background-color: rgba(113, 113, 122, 1);
 
       /* stylelint-disable-next-line max-nesting-depth */
-      @container (width > 7rem) {
+      @container (width > 98px) {
         background-color: rgba(212, 212, 216, 1);
       }
     }
@@ -55,15 +55,17 @@
   display: flex;
   gap: 8px;
 
+  font-size: 1rem;
+
   background-color: transparent;
   transition: border-color $transition-basic;
 
-  @container (width = 7rem) {
+  @container (width = 98px) {
     width: 36px;
     padding-left: 8px;
   }
 
-  @container (width > 7rem) {
+  @container (width > 98px) {
     width: 100%;
     padding-left: 40px;
   }
@@ -94,11 +96,11 @@
     line-height: 1.43rem;
     text-align: left;
 
-    @container (width = 7rem) {
+    @container (width = 98px) {
       opacity: 0;
     }
 
-    @container (width > 7rem) {
+    @container (width > 98px) {
       opacity: 1;
     }
 

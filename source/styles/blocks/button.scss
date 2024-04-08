@@ -16,12 +16,12 @@
 
   cursor: pointer;
 
-  @container (width = 7rem) {
+  @container (width = 98px) {
     padding-top: 8px;
     padding-bottom: 8px;
   }
 
-  @container (width > 7rem) {
+  @container (width > 98px) {
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -78,8 +78,9 @@
   font-family: "Inter", sans-serif;
   animation: var(--animation-menu-content);
   transform-origin: left center;
-
-  @container (width = 7rem) {
+  word-break: break-word;
+  
+  @container (width = 98px) {
     @include visually-hidden;
   }
 }

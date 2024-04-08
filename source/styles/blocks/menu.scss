@@ -2,6 +2,8 @@
   position: relative;
   scrollbar-width: none;
 
+  min-height: 10rem;
+
   overflow: auto;
 }
 
@@ -87,7 +89,7 @@
     animation: var(--animation-menu-content);
     transform-origin: left center;
 
-    @container (width = 7rem) {
+    @container (width = 98px) {
       @include visually-hidden;
     }
   }
@@ -109,18 +111,18 @@
     padding-left $transition-basic,
     padding-right $transition-basic;
 
-  @container (width = 7rem) {
+  @container (width = 98px) {
     padding-left: 8px;
     padding-right: 8px;
   }
 
-  @container (width > 7rem) {
+  @container (width > 98px) {
     padding-left: 16px;
     padding-right: 16px;
   }
 
   &:has(.menu__counter) {
-    @container (width > 7rem) {
+    @container (width > 98px) {
       padding-right: 52px;
     }
   }
@@ -180,13 +182,13 @@
   }
 
   &--type-subtitle {
-    @container (width > 7rem) {
+    @container (width > 98px) {
       margin-bottom: 8px;
     }
   }
 
   &--type-project {
-    @container (width = 7rem) {
+    @container (width = 98px) {
       @include visually-hidden;
     }
   }
@@ -239,8 +241,9 @@
   line-height: 1.43rem;
   animation: var(--animation-menu-content);
   transform-origin: left center;
+  word-break: break-word;
 
-  @container (width = 7rem) {
+  @container (width = 98px) {
     @include visually-hidden;
   }
 }
@@ -256,7 +259,7 @@
     height $transition-basic,
     transform $transition-basic;
 
-  @container (width = 7rem) {
+  @container (width = 98px) {
     position: absolute;
     top: 6px;
     right: 1px;
@@ -266,14 +269,14 @@
     height: 8px;
   }
 
-  @container (width > 7rem) {
+  @container (width > 98px) {
     position: absolute;
     top: 50%;
     right: 16px;
     transform: translateY(-50%);
 
-    width: 20px;
-    height: 20px;
+    width: 1.43rem;
+    height: 1.43rem;
 
     display: flex;
     align-items: center;
@@ -286,11 +289,11 @@
   transform-origin: left center;
   transition: font-size $transition-basic;
 
-  @container (width = 7rem) {
+  @container (width = 98px) {
     font-size: 0;
   }
 
-  @container (width > 7rem) {
+  @container (width > 98px) {
     font-size: 0.71rem;
     font-weight: 700;
     line-height: 1rem;

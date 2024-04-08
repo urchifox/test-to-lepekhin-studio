@@ -14,12 +14,12 @@
     padding-left $transition-basic,
     padding-right $transition-basic;
 
-  @container (width = 7rem) {
+  @container (width = 98px) {
     padding-right: 29px;
     padding-left: 29px;
   }
 
-  @container (width > 7rem) {
+  @container (width > 98px) {
     padding-right: 24px;
     padding-left: 24px;
   }
@@ -43,11 +43,12 @@
   font-weight: 600;
   line-height: 1.43rem;
   text-align: left;
+  word-break: break-word;
 
   animation: var(--animation-menu-content);
   transform-origin: left center;
 
-  @container (width = 7rem) {
+  @container (width = 98px) {
     @include visually-hidden;
   }
 
@@ -71,11 +72,12 @@
   font-weight: 400;
   line-height: 1.14rem;
   text-align: left;
+  word-break: break-word;
 
   animation: var(--animation-menu-content);
   transform-origin: left center;
 
-  @container (width = 7rem) {
+  @container (width = 98px) {
     @include visually-hidden;
   }
 
@@ -92,6 +94,11 @@
   position: relative;
   grid-area: avatar;
   justify-self: center;
+}
+
+.user-info__avatar {
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
 }
 
 .user-info__status-menu {
