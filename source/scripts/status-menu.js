@@ -9,11 +9,11 @@ const statusSettings = new Map([
   }]
 ]);
 
-const header = document.querySelector('.header');
+const header = document.querySelector('.header__wrapper');
 const statusMenu = header.querySelector('.status-menu');
 const text = statusMenu.querySelector('.status-menu__current');
 const toggler = statusMenu.querySelector('.status-menu__toggler');
-const popup = statusMenu.querySelector('.status-menu__popup');
+const popup = document.querySelector('.status-menu__popup');
 
 const setMaxWidth = () => {
   const headerRect = header.getBoundingClientRect();

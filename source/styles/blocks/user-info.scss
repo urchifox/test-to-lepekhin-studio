@@ -1,4 +1,6 @@
 .user-info {
+  position: relative;
+
   padding-top: 24px;
   padding-bottom: 24px;
 
@@ -97,6 +99,8 @@
 }
 
 .user-info__avatar {
+  border-radius: 50%;
+  display: block;
   object-fit: cover;
   aspect-ratio: 1 / 1;
 }
@@ -107,7 +111,6 @@
   bottom: 0;
 }
 
-.user-info__avatar {
-  border-radius: 50%;
-  display: block;
+.user-info__user-menu {
+  grid-area: toggler;
 }

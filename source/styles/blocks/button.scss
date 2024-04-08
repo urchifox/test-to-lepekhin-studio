@@ -79,7 +79,7 @@
   animation: var(--animation-menu-content);
   transform-origin: left center;
   word-break: break-word;
-  
+
   @container (width = 98px) {
     @include visually-hidden;
   }

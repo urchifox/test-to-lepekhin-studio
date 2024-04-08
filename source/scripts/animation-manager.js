@@ -1,7 +1,7 @@
 import {AnimationShorthand, AnimationDuration, AnimationProperty} from './animation-data';
 import {isOverflowedVertically, isVisible} from './utils';
 
-const header = document.querySelector('.header');
+const header = document.querySelector('.header__wrapper');
 const menu = header.querySelector('.menu');
 const iconTop = menu.querySelector('.menu__scroll-icon--position-top');
 const iconBottom = menu.querySelector('.menu__scroll-icon--position-bottom');
@@ -16,7 +16,7 @@ const setIconVisibility = (icon) => {
 };
 
 const animateMenuResize = () => {
-  const animation = header.classList.contains('header--closed') ?
+  const animation = header.classList.contains('header__wrapper--closed') ?
     AnimationShorthand.MenuContent.SHOW :
     AnimationShorthand.MenuContent.HIDE;
   header.style.setProperty(AnimationProperty.MENU_CONTENT, animation);

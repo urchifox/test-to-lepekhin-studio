@@ -10,8 +10,9 @@
   padding-left: var(--sidebar-width-closed);
 
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
 
   font-family: "Inter", sans-serif;
   font-weight: 500;
@@ -29,12 +30,17 @@
 }
 
 .page__header {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.page__main {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
 }
 
 .page__footer {
   margin-top: auto;
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
 }

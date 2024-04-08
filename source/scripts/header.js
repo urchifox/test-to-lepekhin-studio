@@ -1,12 +1,12 @@
 import {animateMenuResize} from './animation-manager';
 
-const header = document.querySelector('.header');
+const header = document.querySelector('.header__wrapper');
 const toggler = header.querySelector('.header__toggler');
 
 const toggleMenuWidth = () => {
   animateMenuResize();
-  header.classList.toggle('header--closed');
-  header.classList.toggle('header--opened');
+  header.classList.toggle('header__wrapper--closed');
+  header.classList.toggle('header__wrapper--opened');
 };
 
 const onTogglerClick = () => toggleMenuWidth();

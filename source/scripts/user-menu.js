@@ -1,7 +1,7 @@
-const header = document.querySelector('.header');
+const header = document.querySelector('.header__wrapper');
 const userMenu = header.querySelector('.user-menu');
 const toggler = userMenu.querySelector('.user-menu__toggler');
-const popup = userMenu.querySelector('.user-menu__popup');
+const popup = document.querySelector('.user-menu__popup');
 
 const setMaxWidth = () => {
   const headerRect = header.getBoundingClientRect();
