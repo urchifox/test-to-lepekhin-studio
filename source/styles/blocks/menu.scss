@@ -249,7 +249,19 @@
 }
 
 .menu__counter {
-  border-radius: 50%;
+  position: absolute;
+
+  padding-top: 0.21rem;
+  padding-right: 0.21rem;
+  padding-bottom: 0.21rem;
+  padding-left: 0.21rem;
+  border-radius: calc(1.43rem / 2);
+  min-width: 1.43rem;
+  min-height: 1.43rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background-color: rgba(139, 92, 246, 1);
   transition:
@@ -260,27 +272,15 @@
     transform $transition-basic;
 
   @container (width = 98px) {
-    position: absolute;
-    top: 6px;
-    right: 1px;
-    transform: translateY(0);
-
-    width: 8px;
-    height: 8px;
+    top: 0;
+    right: -5px;
+    transform: translateY(0) scale(0.4);
   }
 
   @container (width > 98px) {
-    position: absolute;
     top: 50%;
     right: 16px;
-    transform: translateY(-50%);
-
-    width: 1.43rem;
-    height: 1.43rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transform: translateY(-50%) scale(1);
   }
 }
 
