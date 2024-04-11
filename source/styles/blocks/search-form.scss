@@ -63,22 +63,36 @@
   @container (width = 98px) {
     width: 36px;
     padding-left: 8px;
+
+    @media (prefers-color-scheme: light) {
+      color: rgba(82, 82, 91, 0);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: rgba(255, 255, 255, 0);
+    }
   }
 
   @container (width > 98px) {
     width: 100%;
     padding-left: 40px;
+
+    @media (prefers-color-scheme: light) {
+      color: rgba(82, 82, 91, 1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: rgba(255, 255, 255, 1);
+    }
   }
 
   @media (prefers-color-scheme: light) {
     border-color: rgba(209, 213, 219, 1);
-    color: rgba(82, 82, 91, 1);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.07);
   }
 
   @media (prefers-color-scheme: dark) {
     border-color: rgba(63, 63, 70, 1);
-    color: rgba(255, 255, 255, 1);
   }
 
   &:hover {
